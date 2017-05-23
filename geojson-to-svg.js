@@ -73,7 +73,8 @@ export default class {
 		 * @since 0.1.0
 		 * @property {object} boundries - An object with four attributes: north, south, west, and east. Each attribute is a float latitude or longitude value.
 		 */
-		this.boundries = ( boundriesObject && boundriesObject.north && boundriesObject.south && boundriesObject.west && boundriesObject.east ) ? boundriesObject : { north: 44.9216, south: 44.8974, west: -93.2897, east: -93.2459 };
+//		this.boundries = ( boundriesObject && boundriesObject.north && boundriesObject.south && boundriesObject.west && boundriesObject.east ) ? boundriesObject : { north: 44.9707, south: 44.9698, west: -93.2897, east: -93.2882 };
+this.boundries = ( boundriesObject && boundriesObject.north && boundriesObject.south && boundriesObject.west && boundriesObject.east ) ? boundriesObject : { north: 44.9216, south: 44.8974, west: -93.2897, east: -93.2459 };
 
 		/**
 		 * Additional configuration attributes.
@@ -91,7 +92,7 @@ export default class {
 		 */
 		this.xAxisTotal = parseInt( window.getComputedStyle( containerElement ).getPropertyValue( 'width' ) );
 
-		/**
+		/*longitudeAdjustment
 		 * The latitude value of each pixel in the SVG image.
 		 *
 		 * @since 0.1.0
@@ -105,7 +106,7 @@ export default class {
 		 * @since 0.1.0
 		 * @property {float} longitudePixelValue - The longitude value of each pixel in the SVG image.
 		 */
-		this.longitudePixelValue = parseFloat( this.longitudePixelValue * ( parseFloat( attributes.longitudeAdjustment ) || 1 ) );
+		this.longitudePixelValue = parseFloat( this.latitudePixelValue * ( parseFloat( attributes.longitudeAdjustment ) || 1 ) );
 
 		/**
 		 * The height in pixels of the SVG image. As set by the longitude boundries.
