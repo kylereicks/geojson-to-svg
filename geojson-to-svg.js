@@ -84,12 +84,12 @@ export default class {
 		this.attributes = attributes || {};
 
 		/**
-		 * The width in pixels of the containerElement.
+		 * An arbitrary starting width.
 		 *
 		 * @since 0.1.0
-		 * @property {integer} xAxisTotal - The width of the containerElement.
+		 * @property {integer} xAxisTotal - The starting width.
 		 */
-		this.xAxisTotal = parseInt( window.getComputedStyle( containerElement ).getPropertyValue( 'width' ) );
+		this.xAxisTotal = 1000;
 
 		/*longitudeAdjustment
 		 * The latitude value of each pixel in the SVG image.
