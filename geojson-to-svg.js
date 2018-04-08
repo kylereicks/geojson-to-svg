@@ -119,8 +119,7 @@ export default class {
 			return this;
 		}
 
-		this.svg.setAttribute('height', Math.ceil( this.yAxisTotal ) + 'px');
-		this.svg.setAttribute('width', '100%');
+		this.svg.setAttribute( 'viewBox', '0 0 ' + Math.ceil( this.xAxisTotal ) + ' ' + Math.ceil( this.yAxisTotal ) );
 
 		containerElement.appendChild( this.svg );
 
